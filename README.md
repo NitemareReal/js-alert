@@ -3,6 +3,11 @@
 
 # js-alert
 A simple JavaScript alert manager.
+Changes in this fork:
+v1.0.5
+* Clicking outside the dialog doesn't dismiss the dialog
+* Buttons only react when clicked with left button
+* Solved a legacy dependency problem in package.json
 
 
 ## Use from the browser
