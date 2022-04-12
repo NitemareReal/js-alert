@@ -282,6 +282,7 @@ export default class JSAlert extends EventSource {
 		}, 0);
 		
 		// Add dismiss handler
+		/* JMFA: No dismiss handler (no dismiss if click outside)
 		this.addTouchHandler(this.elems.container, () => {
 			
 			// Check if cancelable
@@ -293,7 +294,7 @@ export default class JSAlert extends EventSource {
 			this.dismiss();
 			
 		});
-		
+		*/
 		// Create window
 		this.elems.window = document.createElement("div");
 		this.elems.window.style.cssText = "position: relative; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); border-radius: 5px; padding: 10px; min-width: 50px; min-height: 10px; max-width: 50%; max-height: 90%; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); ";
@@ -434,17 +435,18 @@ export default class JSAlert extends EventSource {
 		
 		// Create handler
 		var handler = (e) => {
-			
-			// Stop default browser action, unless this is an input field
-			if (e.target.nodeName.toLowerCase() != "input")
-				e.preventDefault();
-			
-			// Check if our element was pressed, not a child element
-			if (e.target != elem)
-				return;
-			
-			// Trigger callback
-			callback();
+			if(e.button == 0){	// JMFA: Only if LEFT button is pressed
+				// Stop default browser action, unless this is an input field
+				if (e.target.nodeName.toLowerCase() != "input")
+					e.preventDefault();
+				
+				// Check if our element was pressed, not a child element
+				if (e.target != elem)
+					return;
+				
+				// Trigger callback
+				callback();
+			}
 		}
 		
 		// Add listeners
