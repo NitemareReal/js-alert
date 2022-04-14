@@ -1,5 +1,5 @@
 {
-  "name": "js-alert2",
+  "name": "js-alert",
   "version": "1.0.5",
   "description": "A simple JavaScript popup alert manager.",
   "main": "lib/index.js",

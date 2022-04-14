@@ -1,10 +1,10 @@
 //
-// Main class for the JSAlert2 package
+// Main class for the JSAlert package
 
 import Queue from './queue.js'
 import EventSource from './event-source.js'
 
-export default class JSAlert2 extends EventSource {
+export default class JSAlert extends EventSource {
 	
 	/** @static Creates and shows a new alert with the specified text */
 	static alert(text, title, icon, closeText = "Close") {
@@ -14,12 +14,12 @@ export default class JSAlert2 extends EventSource {
 			return Promise.resolve(console.log("Alert: " + text));
 		
 		// Create alert
-		var alert = new JSAlert2(text, title);
+		var alert = new JSAlert(text, title);
 		alert.addButton(closeText, null);
 		
 		// Set icon
 		if (icon !== false)
-			alert.setIcon(icon || JSAlert2.Icons.Information);
+			alert.setIcon(icon || JSAlert.Icons.Information);
 		
 		// Show it
 		return alert.show();
@@ -34,13 +34,13 @@ export default class JSAlert2 extends EventSource {
 			return Promise.resolve(console.log("Alert: " + text));
 		
 		// Create alert
-		var alert = new JSAlert2(text, title);
+		var alert = new JSAlert(text, title);
 		alert.addButton(acceptText, true);
 		alert.addButton(rejectText, false);
 		
 		// Set icon
 		if (icon !== false)
-			alert.setIcon(icon || JSAlert2.Icons.Question);
+			alert.setIcon(icon || JSAlert.Icons.Question);
 		
 		// Show it
 		return alert.show();
@@ -55,13 +55,13 @@ export default class JSAlert2 extends EventSource {
 			return Promise.resolve(console.log("Alert: " + text));
 		
 		// Create alert
-		var alert = new JSAlert2(text, title);
+		var alert = new JSAlert(text, title);
 		alert.addButton(acceptText, true, "default");
 		alert.addButton(rejectText, false, "cancel");
 		
 		// Set icon
 		if (icon !== false)
-			alert.setIcon(icon || JSAlert2.Icons.Question);
+			alert.setIcon(icon || JSAlert.Icons.Question);
 		
 		// Add text field
 		alert.addTextField(defaultText, null, placeholderText);
@@ -87,7 +87,7 @@ export default class JSAlert2 extends EventSource {
 			return Promise.resolve(console.log("Loading: " + text));
 		
 		// Create alert
-		var alert = new JSAlert2(text);
+		var alert = new JSAlert(text);
 		alert.cancelable = cancelable;
 		
 		// Show it
@@ -114,7 +114,7 @@ export default class JSAlert2 extends EventSource {
 	}
 	
 	
-	/** Sets an icon for the alert. `icon` is either a URL or one of `JSAlert2.Icons`. */
+	/** Sets an icon for the alert. `icon` is either a URL or one of `JSAlert.Icons`. */
 	setIcon(icon) {
 		this.iconURL = icon;
 	}
@@ -168,7 +168,7 @@ export default class JSAlert2 extends EventSource {
 	show() {
 		
 		// Add to the queue
-		JSAlert2.popupQueue.add(this).then(() => {
+		JSAlert.popupQueue.add(this).then(() => {
 			
 			// Show us
 			this._show();
@@ -198,7 +198,7 @@ export default class JSAlert2 extends EventSource {
 		this.dismissed = true;
 		
 		// Remove us from the queue
-		JSAlert2.popupQueue.remove(this);
+		JSAlert.popupQueue.remove(this);
 		
 		// Store result
 		this.result = result;
@@ -522,14 +522,14 @@ export default class JSAlert2 extends EventSource {
 
 // Include theme's icons
 import icons from "./icons.js";
-JSAlert2.Icons = icons;
+JSAlert.Icons = icons;
 
 
 	
 // The default popup queue
-JSAlert2.popupQueue = new Queue();
+JSAlert.popupQueue = new Queue();
 
 
 // In case anyone wants to use the classes of this project on their own...
-JSAlert2.Queue = Queue;
-JSAlert2.EventSource = EventSource;
+JSAlert.Queue = Queue;
+JSAlert.EventSource = EventSource;
