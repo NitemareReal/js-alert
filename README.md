@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/status-ready-brightgreen.svg)
 [![Build Status](https://travis-ci.org/jjv360/js-alert.svg?branch=master)](https://travis-ci.org/jjv360/js-alert)
 
-# js-alert
+# js-alert2
 A simple JavaScript alert manager.
 
 #### Changes in this fork: ####
@@ -16,7 +16,7 @@ A simple JavaScript alert manager.
 The simplest way to use from the browser is to include the minified script:
 
 ``` html
-<script src="https://unpkg.com/js-alert/dist/jsalert.min.js"></script>
+<script src="https://unpkg.com/js-alert2/dist/jsalert2.min.js"></script>
 ```
 
 
@@ -25,13 +25,13 @@ The simplest way to use from the browser is to include the minified script:
 To use this library in your node web app, first install the dependency:
 
 ```
-npm install --save js-alert
+npm install --save js-alert2
 ```
 
 Then you can use it in your project:
 
 ``` javascript
-var JSAlert = require("js-alert");
+var JSAlert2 = require("js-alert2");
 ```
 
 

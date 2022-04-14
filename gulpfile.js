@@ -45,7 +45,7 @@ gulp.task("build", ["clean"], function() {
 	return browserify({
 		entries: './src/index.js',
 		debug: true,
-		standalone: "JSAlert"
+		standalone: "JSAlert2"
 	})
 	
 	// Do babelify transforms
@@ -68,7 +68,7 @@ gulp.task("build", ["clean"], function() {
     })
 	
 	// Set output name
-	.pipe(source('jsalert.min.js'))
+	.pipe(source('jsalert2.min.js'))
 	
 	// Convert to a buffered file object
 	.pipe(buffer())
@@ -91,8 +91,8 @@ gulp.task("build", ["clean"], function() {
 gulp.task("test", ["build"], function() {
 	
 	// Create an alert to test. If not in a browser, this should just output a message to the console.
-	var JSAlert = require("./dist/jsalert.min.js");
-	JSAlert.alert("Test successful!");
+	var JSAlert2 = require("./dist/jsalert2.min.js");
+	JSAlert2.alert("Test successful!");
 	
 });
 
