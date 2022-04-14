@@ -2,7 +2,7 @@
   "name": "js-alert",
   "version": "1.0.5",
   "description": "A simple JavaScript popup alert manager.",
-  "main": "lib/index.js",
+  "main": "dist/jsalert.min.js",
   "scripts": {
     "test": "npm install && gulp test",
     "build": "npm install && gulp",
