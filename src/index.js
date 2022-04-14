@@ -110,7 +110,8 @@ export default class JSAlert extends EventSource {
 		this.cancelable = true;
 		this.cancelled	= false;
 		this.dismissed	= false;
-		
+		// JMFA:
+		this.clickOutsideDismiss = false;
 	}
 	
 	
@@ -231,7 +232,13 @@ export default class JSAlert extends EventSource {
 		return this;
 	
 	}
-	
+	/**
+	 * Set behavior when clicking outside alert
+	 * @param {boolean} value 
+	 */
+	clickOutsideDismiss(value=true){
+		this.clickOutsideDismiss = value;
+	}
 	
 	/** @private Called to actually show the alert. */
 	_show() {
@@ -282,19 +289,21 @@ export default class JSAlert extends EventSource {
 		}, 0);
 		
 		// Add dismiss handler
-		/* JMFA: No dismiss handler (no dismiss if click outside)
-		this.addTouchHandler(this.elems.container, () => {
-			
-			// Check if cancelable
-			if (!this.cancelable)
-				return;
-			
-			// Dismiss
-			this.cancelled = true;
-			this.dismiss();
-			
-		});
-		*/
+		
+		if(this.clickOutsideDismiss){	// JMFA
+			this.addTouchHandler(this.elems.container, () => {
+				
+				// Check if cancelable
+				if (!this.cancelable)
+					return;
+				
+				// Dismiss
+				this.cancelled = true;
+				this.dismiss();
+				
+			});
+		}
+		
 		// Create window
 		this.elems.window = document.createElement("div");
 		this.elems.window.style.cssText = "position: relative; background-color: rgba(255, 255, 255, 0.95); box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); border-radius: 5px; padding: 10px; min-width: 50px; min-height: 10px; max-width: 50%; max-height: 90%; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); ";
