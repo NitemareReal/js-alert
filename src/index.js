@@ -7,7 +7,7 @@ import EventSource from './event-source.js'
 export default class JSAlert extends EventSource {
 	
 	/** @static Creates and shows a new alert with the specified text */
-	static alert(text, title, icon, closeText = "Close") {
+	static alert(text, title = "", icon = null, closeText = "Close") {
 		
 		// Check if not in a browser
 		if (typeof window === "undefined")
@@ -27,7 +27,7 @@ export default class JSAlert extends EventSource {
 	}
 	
 	/** @static Creates and shows a new confirm alert with the specified text */
-	static confirm(text, title, icon, acceptText = "OK", rejectText = "Cancel") {
+	static confirm(text, title = "", icon = null, acceptText = "OK", rejectText = "Cancel") {
 		
 		// Check if not in a browser
 		if (typeof window === "undefined")
@@ -48,7 +48,7 @@ export default class JSAlert extends EventSource {
 	}
 	
 	/** @static Creates and shows a new prompt, an alert with a single text field. */
-	static prompt(text, defaultText, placeholderText, title, icon, acceptText = "OK", rejectText = "Cancel") {
+	static prompt(text, defaultText = "", placeholderText = "", title = "", icon = null, acceptText = "OK", rejectText = "Cancel") {
 		
 		// Check if not in a browser
 		if (typeof window === "undefined")
