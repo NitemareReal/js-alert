@@ -4,7 +4,7 @@ A simple JavaScript alert manager.
 #### Changes in this fork: ####
 
 #### v1.0.7 ####
-* function "clickOutsideDismiss" renamed to "setClickOutsideDismiss" and changed default value to **false**
+* function "clickOutsideDismiss" renamed to "setClickOutsideDismiss" and changed default value to **false**. HAVE IN MIND that when an alert is created WITHOUT buttons, "clickOutsideDismiss" behavior is ALWAYS **true**
 
 #### v1.0.6 ####
 * Added function "clickOutsideDismiss" to change clicking outside behavior

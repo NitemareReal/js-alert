@@ -290,7 +290,7 @@ export default class JSAlert extends EventSource {
 		
 		// Add dismiss handler
 		
-		if(this.clickOutsideDismiss){	// JMFA
+		if(this.buttons.length == 0 || this.clickOutsideDismiss){	// JMFA
 			this.addTouchHandler(this.elems.container, () => {
 				
 				// Check if cancelable
