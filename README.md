@@ -3,8 +3,12 @@ A simple JavaScript alert manager.
 
 #### Changes in this fork: ####
 
+#### v1.0.8 ####
+
+* When an alert is created WITHOUT buttons, "clickOutsideDismiss" behavior is ALWAYS **true** to allow closing the dialog box
+
 #### v1.0.7 ####
-* function "clickOutsideDismiss" renamed to "setClickOutsideDismiss" and changed default value to **false**. HAVE IN MIND that when an alert is created WITHOUT buttons, "clickOutsideDismiss" behavior is ALWAYS **true**
+* function "clickOutsideDismiss" renamed to "setClickOutsideDismiss" and changed default value to **false**
 
 #### v1.0.6 ####
 * Added function "clickOutsideDismiss" to change clicking outside behavior
@@ -125,6 +129,7 @@ alert.show();
 ``` javascript
 // Create an alert that closes (dismisses) when clicking outside
 var alert = new JSAlert("My text", "My title");
+alert.addButton("Close", null);
 alert.setClickOutsideDismiss(true);
 alert.show();
 ```

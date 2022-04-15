@@ -152,6 +152,7 @@
 	
 		document.querySelector("#test07").addEventListener("click", function() {
 			var alert = new JSAlert("A simple alert.");
+			alert.addButton("Close", null);
 			alert.setClickOutsideDismiss(true);
 			alert.show();		
 		});

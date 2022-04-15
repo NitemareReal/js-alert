@@ -1,6 +1,6 @@
 {
   "name": "js-alert2",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A simple JavaScript popup alert manager.",
   "main": "dist/jsalert.min.js",
   "scripts": {
