@@ -3,8 +3,11 @@ A simple JavaScript alert manager.
 
 #### Changes in this fork: ####
 
+#### v1.0.7 ####
+* function "clickOutsideDismiss" renamed to "setClickOutsideDismiss" and changed default value to **false**
+
 #### v1.0.6 ####
-* Added function "setClickOutsideDismiss" to change clicking outside behavior
+* Added function "clickOutsideDismiss" to change clicking outside behavior
 
 #### v1.0.5 ####
 * Clicking outside the dialog doesn't dismiss the dialog
