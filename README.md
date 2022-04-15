@@ -58,7 +58,7 @@ var JSAlert = require("js-alert2");
 
 ## Usage examples
 
-See all tests [here](https://rawgit.com/jjv360/js-alert/master/tests.html).
+[//]: # (See all tests [here](https://rawgit.com/jjv360/js-alert/master/tests.html).)
 
 ``` javascript
 // Show a plain alert
