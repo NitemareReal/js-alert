@@ -47,8 +47,8 @@ var JSAlert = require("js-alert2");
 | Methods (called on a JSAlert object)       | Description                       | Params 
 | ------------------------------------------ | --------------------------------- | ---
 | setIcon(icon)                              | Sets an icon for the alert        | `string icon` either a URL or one of `JSAlert.Icons` strings
-| addButton(text, value, type)               | Adds a button. Returns a Promise<br>that is called if the button is clicked | `string text` The button text<br>`string value` The value sent to promise function when button is pressed<br>`string type` Type of the button, e.g: 'cancel', 'normal', 'default'
-| addTextField(value, type, placeholderText) | Adds a text field. Returns a Promise<br>that will be called when the dialog is dismissed,<br>but not cancelled. | `string value` The initial value of input control<br>`string type` Type of input control e.g: 'text', 'password', 'checkbox', ...<br>`string placeholderText` placeholder text shown in control
+| addButton(text, value, type)               | Adds a button. Returns a Promise that is called if the button is clicked | `string text` The button text<br>`string value` The value sent to promise function when button is pressed<br>`string type` Type of the button, e.g: 'cancel', 'normal', 'default'
+| addTextField(value, type, placeholderText) | Adds a text field. Returns a Promise that will be called when the dialog is dismissed, but not cancelled. | `string value` The initial value of input control<br>`string type` Type of input control e.g: 'text', 'password', 'checkbox', ...<br>`string placeholderText` placeholder text shown in control
 | getTextFieldValue(index)                   |  Gets a text field's value        | `int index` index of input control to get value from
 | show()                                     | Shows the alert                   |
 | then(func)                                 | A then function, to allow chaining with Promises | `function func` a function to be called when alert is closed
