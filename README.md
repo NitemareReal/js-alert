@@ -135,8 +135,8 @@ alert.show();
 ```
 ## Icons
 
-| Const string              | Icon                                                        |
-| ------------------------- | ----------------------------------------------------------- |
+| Const string              | Icon                                                    |
+| ------------------------- |:-------------------------------------------------------:|
 | JSAlert.Icons.Information | ![Information](res/Information.svg "Information Icon")  |
 | JSAlert.Icons.Question    | ![Question](res/Question.svg "Question Icon")           |
 | JSAlert.Icons.Success     | ![Success](res/Success.svg "Success Icon")              |
