@@ -147,12 +147,12 @@
 	</script>
 	
 	
-	<div id='test07' class='button'>Simple alert that closes when clicking outside</div>
+	<div id='test07' class='button'>Simple alert that closes (dismisses) when clicking outside</div>
 	<script>
 	
 		document.querySelector("#test07").addEventListener("click", function() {
 			var alert = new JSAlert("A simple alert.");
-			alert.clickOutsideDismiss(true);
+			alert.setClickOutsideDismiss(true);
 			alert.show();		
 		});
 	

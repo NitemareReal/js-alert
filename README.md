@@ -4,7 +4,7 @@ A simple JavaScript alert manager.
 #### Changes in this fork: ####
 
 #### v1.0.6 ####
-* Added function "clickOutsideDismiss" to change clicking outside behavior
+* Added function "setClickOutsideDismiss" to change clicking outside behavior
 
 #### v1.0.5 ####
 * Clicking outside the dialog doesn't dismiss the dialog
@@ -54,7 +54,7 @@ var JSAlert = require("js-alert2");
 | then(func)                                 | A 'then' function, to allow chaining with Promises | `function func` a function to be called when alert is closed
 | dismiss(result)                            | Dismisses the alert               | `boolean result` value sent to promise function when closing the alert
 | dismissIn(time)                            | Dismisses the alert some time in the future | `int time` milliseconds to wait after dismissing the alert
-| clickOutsideDismiss(value)                 | Set behavior when clicking outside alert | `boolean value` if set to **true**, clicking outside the alert box will dismiss the alert box. Default: **false**
+| setClickOutsideDismiss(value)              | Set behavior when clicking outside alert | `boolean value` if set to **true**, clicking outside the alert box will dismiss the alert box. Default: **false**
 
 ## Usage examples
 
@@ -66,6 +66,11 @@ JSAlert.alert("This is an alert.");
 ``` javascript
 // Show an alert with a title and custom dismiss button
 JSAlert.alert("Your files have been saved successfully.", "Files Saved", null, "Got it");
+```
+
+``` javascript
+// Show an alert with a title and no icon
+JSAlert.alert("Alert with no icon.", "The title", false);
 ```
 
 ``` javascript
@@ -102,7 +107,7 @@ JSAlert.confirm("Are you sure you want to delete this file?").then(function(resu
 ```
 
 ``` javascript
-// Create an alert with custom buttons
+// Create an alert with custom buttons and 'Deleted' icon
 var alert = new JSAlert("My text", "My title");
 alert.addButton("Yes").then(function() {
     console.log("Alert button Yes pressed");
@@ -110,13 +115,14 @@ alert.addButton("Yes").then(function() {
 alert.addButton("No").then(function() {
     console.log("Alert button No pressed");
 });
+alert.setIcon(JSAlert.Icons.Deleted)
 alert.show();
 ```
 
 ``` javascript
-// Create an alert that closes when clicking outside
+// Create an alert that closes (dismisses) when clicking outside
 var alert = new JSAlert("My text", "My title");
-alert.clickOutsideDismiss(true);
+alert.setClickOutsideDismiss(true);
 alert.show();
 ```
 ## Icons

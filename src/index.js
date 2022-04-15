@@ -236,7 +236,7 @@ export default class JSAlert extends EventSource {
 	 * Set behavior when clicking outside alert
 	 * @param {boolean} value 
 	 */
-	clickOutsideDismiss(value=false){
+	setClickOutsideDismiss(value=false){
 		this.clickOutsideDismiss = value;
 	}
 	
