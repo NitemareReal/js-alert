@@ -51,10 +51,10 @@ var JSAlert = require("js-alert2");
 | addTextField(value, type, placeholderText) | Adds a text field. Returns a Promise that will be called when the dialog is dismissed, but not cancelled. | `string value` The initial value of input control<br>`string type` Type of input control e.g: 'text', 'password', 'checkbox', ...<br>`string placeholderText` placeholder text shown in control
 | getTextFieldValue(index)                   |  Gets a text field's value        | `int index` index of input control to get value from
 | show()                                     | Shows the alert                   |
-| then(func)                                 | A then function, to allow chaining with Promises | `function func` a function to be called when alert is closed
+| then(func)                                 | A 'then' function, to allow chaining with Promises | `function func` a function to be called when alert is closed
 | dismiss(result)                            | Dismisses the alert               | `boolean result` value sent to promise function when closing the alert
 | dismissIn(time)                            | Dismisses the alert some time in the future | `int time` milliseconds to wait after dismissing the alert
-| clickOutsideDismiss(value)                 | Set behavior when clicking outside alert | `boolean value` if set to **true**, clicking outside the alert box will dismiss the alert box.
+| clickOutsideDismiss(value)                 | Set behavior when clicking outside alert | `boolean value` if set to **true**, clicking outside the alert box will dismiss the alert box. Default: **false**
 
 ## Usage examples
 
@@ -125,12 +125,12 @@ alert.show();
 
 | Const string              | Icon                                                        |
 | ------------------------- | ----------------------------------------------------------- |
-| JSAlert.Icons.Information | ![Information](src/res/Information.svg "Information Icon")  |
-| JSAlert.Icons.Question    | ![Question](src/res/Question.svg "Question Icon")           |
-| JSAlert.Icons.Success     | ![Success](src/res/Success.svg "Success Icon")              |
-| JSAlert.Icons.Warning     | ![Warning](src/res/Warning.svg "Warning Icon")              |
-| JSAlert.Icons.Failed      | ![Failed](src/res/Failed.svg "Failed Icon")                 |
-| JSAlert.Icons.Deleted     | ![Deleted](src/res/Deleted.svg "Deleted Icon")              |
+| JSAlert.Icons.Information | ![Information](res/Information.svg "Information Icon")  |
+| JSAlert.Icons.Question    | ![Question](res/Question.svg "Question Icon")           |
+| JSAlert.Icons.Success     | ![Success](res/Success.svg "Success Icon")              |
+| JSAlert.Icons.Warning     | ![Warning](res/Warning.svg "Warning Icon")              |
+| JSAlert.Icons.Failed      | ![Failed](res/Failed.svg "Failed Icon")                 |
+| JSAlert.Icons.Deleted     | ![Deleted](res/Deleted.svg "Deleted Icon")              |
 ## Building the library
 
 To create a minified build of this library, run this:
