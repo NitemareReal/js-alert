@@ -3,6 +3,9 @@ A simple JavaScript alert manager.
 
 #### Changes in this fork: ####
 
+#### v1.0.9 ####
+
+* Added classes to all items to allow customization
 #### v1.0.8 ####
 
 * When an alert is created WITHOUT buttons, "clickOutsideDismiss" behavior is ALWAYS **true** to allow closing the dialog box
